@@ -1,5 +1,6 @@
 import { Construct } from "constructs";
 import * as sqs from "aws-cdk-lib/aws-sqs";
+import { CfnTag } from "aws-cdk-lib";
 // Util
 import { createHashId } from "../utils/util";
 
@@ -16,7 +17,7 @@ export class Queue {
     this._scope = scope;
     // Extract the attributes and set a list of tag
     const attributes: any = config.Attributes;
-    const tags: any[] = config.Tags !== undefined ? Object.keys(config.Tags).map((key: string) => { return {  key: key, value: config.Tags[key] }; }) : [];
+    const tags: CfnTag[] = config.Tags !== undefined ? Object.keys(config.Tags).map((key: string): CfnTag => { return {  key: key, value: config.Tags[key] }; }) : [];
     // Extract queue name
     const splitArn: string[] = attributes.QueueArn.split(":");
     const queueName: string = splitArn[splitArn.length - 1];
