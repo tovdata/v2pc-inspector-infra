@@ -1,5 +1,6 @@
 [
   {
+    "Description": "Policy to read and write the dynamodb items",
     "PolicyDocument": {
       "Version": "2012-10-17",
       "Statement": [
@@ -13,6 +14,7 @@
     "PolicyName": "v2pc-inspector-to-read-write-dynamodb-items"
   },
   {
+    "Description": "Policy to assume role",
     "PolicyDocument": {
       "Version": "2012-10-17",
       "Statement": [
@@ -26,6 +28,7 @@
     "PolicyName": "v2pc-inspector-to-assume-role"
   },
   {
+    "Description": "Policy to read and wirte the s3 object",
     "PolicyDocument": {
       "Version": "2012-10-17",
       "Statement": [
@@ -36,9 +39,10 @@
         }
       ]
     },
-    "PolicyName": "v2pc-inspector-to-access-s3-object"
+    "PolicyName": "v2pc-inspector-to-read-write-s3-object"
   },
   {
+    "Description": "Policy to read and write the sqs message",
     "PolicyDocument": {
       "Version": "2012-10-17",
       "Statement": [

@@ -7,20 +7,18 @@
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Basic execution permission for lambda",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
@@ -38,20 +36,18 @@
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Permission to read only access for amazon dynamodb from lambda",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
@@ -69,20 +65,18 @@
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Permission to read and write access for amazon dynamodb from lambda",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
@@ -97,23 +91,30 @@
       }, {
         "PolicyName": "AWSLambdaSQSQueueExecutionRole",
         "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"
+      }, {
+        "PolicyName": "v2pc-inspector-to-read-write-dynamodb-items",
+        "PolicyArn": ""
+      }, {
+        "PolicyName": "v2pc-inspector-to-read-write-s3-object",
+        "PolicyArn": ""
+      }, {
+        "PolicyName": "v2pc-inspector-to-read-write-sqs-message",
+        "PolicyArn": ""
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Permission to scan target vpc",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
@@ -131,23 +132,27 @@
       }, {
         "PolicyName": "AWSLambdaSQSQueueExecutionRole",
         "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"
+      }, {
+        "PolicyName": "v2pc-inspector-to-assume-role",
+        "PolicyArn": ""
+      }, {
+        "PolicyName": "v2pc-inspector-to-read-write-s3-object",
+        "PolicyArn": ""
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Permission to process queue",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
@@ -159,23 +164,27 @@
       {
         "PolicyName": "AWSLambdaBasicExecutionRole",
         "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }, {
+        "PolicyName": "v2pc-inspector-to-assume-role",
+        "PolicyArn": ""
+      }, {
+        "PolicyName": "v2pc-inspector-to-read-write-dynamodb-items",
+        "PolicyArn": ""
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Permission to handle scan request",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
@@ -193,20 +202,18 @@
       }
     ],
     "Role": {
-      "AssumeRolePolicyDocument": [
-        {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "lambda.amazonaws.com"
-              },
-              "Action": "sts:AssumeRole"
-            }
-          ]
-        }
-      ],
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
       "Description": "Permission to read s3 from lambda",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
