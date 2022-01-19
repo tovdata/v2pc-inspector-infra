@@ -1,0 +1,83 @@
+[
+  {
+    "Attributes": {
+      "QueueArn": "arn:aws:sqs:ap-northeast-2:395824177941:v2pc-scan-queue.fifo",
+      "ApproximateNumberOfMessages": "0",
+      "ApproximateNumberOfMessagesNotVisible": "0",
+      "ApproximateNumberOfMessagesDelayed": "0",
+      "CreatedTimestamp": "1638260148",
+      "LastModifiedTimestamp": "1641886289",
+      "VisibilityTimeout": "120",
+      "MaximumMessageSize": "262144",
+      "MessageRetentionPeriod": "345600",
+      "DelaySeconds": "0",
+      "Policy": "{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::395824177941:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:ap-northeast-2:395824177941:v2pc-scan-queue.fifo\"}]}",
+      "ReceiveMessageWaitTimeSeconds": "0",
+      "SqsManagedSseEnabled": "false",
+      "FifoQueue": "true",
+      "DeduplicationScope": "queue",
+      "FifoThroughputLimit": "perQueue",
+      "ContentBasedDeduplication": "false",
+      "PolicyObject": {
+        "Version": "2008-10-17",
+        "Id": "__default_policy_ID",
+        "Statement": [
+          {
+            "Sid": "__owner_statement",
+            "Effect": "Allow",
+            "Principal": {
+              "AWS": "arn:aws:iam::395824177941:root"
+            },
+            "Action": "SQS:*",
+            "Resource": "arn:aws:sqs:ap-northeast-2:395824177941:v2pc-scan-queue.fifo"
+          }
+        ]
+      }
+    },
+    "Tags": {
+        "Module": "DataProcess",
+        "Purpose": "v2pc",
+        "Creator": "Tim"
+    }
+  }, {
+    "Attributes": {
+      "QueueArn": "arn:aws:sqs:ap-northeast-2:395824177941:v2pc-update-viewdata.fifo",
+      "ApproximateNumberOfMessages": "0",
+      "ApproximateNumberOfMessagesNotVisible": "0",
+      "ApproximateNumberOfMessagesDelayed": "0",
+      "CreatedTimestamp": "1638781925",
+      "LastModifiedTimestamp": "1638781925",
+      "VisibilityTimeout": "30",
+      "MaximumMessageSize": "262144",
+      "MessageRetentionPeriod": "345600",
+      "DelaySeconds": "0",
+      "Policy": "{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::395824177941:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:ap-northeast-2:395824177941:v2pc-update-viewdata.fifo\"}]}",
+      "ReceiveMessageWaitTimeSeconds": "0",
+      "SqsManagedSseEnabled": "false",
+      "FifoQueue": "true",
+      "DeduplicationScope": "queue",
+      "FifoThroughputLimit": "perQueue",
+      "ContentBasedDeduplication": "false",
+      "PolicyObject": {
+        "Version": "2008-10-17",
+        "Id": "__default_policy_ID",
+        "Statement": [
+          {
+            "Sid": "__owner_statement",
+            "Effect": "Allow",
+            "Principal": {
+              "AWS": "arn:aws:iam::395824177941:root"
+            },
+            "Action": "SQS:*",
+            "Resource": "arn:aws:sqs:ap-northeast-2:395824177941:v2pc-update-viewdata.fifo"
+          }
+        ]
+      }
+    },
+    "Tags": {
+        "Module": "DataProcess",
+        "Purpose": "v2pc",
+        "Creator": "Tim"
+    }
+  }
+]

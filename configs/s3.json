@@ -1,0 +1,164 @@
+[
+  {
+    "Name": "v2pc-service-storage",
+    "CreationDate": "2021-12-14 09:28:30+00:00",
+    "ACL": {
+      "Owner": {
+        "ID": "c550654fa6db6c4d5adaa5f11c3635bc700a09a2826d4d145f75e74c409a631e"
+      },
+      "Grants": [
+        {
+          "Grantee": {
+            "ID": "c550654fa6db6c4d5adaa5f11c3635bc700a09a2826d4d145f75e74c409a631e",
+            "Type": "CanonicalUser"
+          },
+          "Permission": "FULL_CONTROL"
+        }
+      ]
+    },
+    "LoggingEnabled": null,
+    "Accelerate": null,
+    "LocationConstraint": "ap-northeast-2",
+    "PublicAccessBlockConfiguration": {
+      "BlockPublicAcls": true,
+      "IgnorePublicAcls": true,
+      "BlockPublicPolicy": true,
+      "RestrictPublicBuckets": true
+    },
+    "Versioning": {},
+    "TagSet": [
+      {
+        "Key": "Module",
+        "Value": "DataStorage"
+      },
+      {
+        "Key": "Purpose",
+        "Value": "v2pc"
+      },
+      {
+        "Key": "Creator",
+        "Value": "Tim"
+      }
+    ],
+    "OwnershipControls": {
+      "Rules": [
+        {
+          "ObjectOwnership": "BucketOwnerEnforced"
+        }
+      ]
+    },
+    "NotificationConfiguration": {
+      "LambdaFunctionConfigurations": [
+        {
+          "Id": "807f3b4c-6589-447e-8f4c-aeda924736aa",
+          "LambdaFunctionArn": "arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-build-initial-view-diagram-from-scanresult",
+          "Events": [
+            "s3:ObjectCreated:*"
+          ],
+          "Filter": {
+            "Key": {
+              "FilterRules": [
+                {
+                  "Name": "Prefix",
+                  "Value": "scanResults/"
+                },
+                {
+                  "Name": "Suffix",
+                  "Value": ".json"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "IntelligentTieringConfigurationList": [],
+    "AnalyticsConfigurationList": [],
+    "MetricsConfigurationList": [],
+    "InventoryConfigurationList": []
+  }, {
+    "Name": "v2pc.tovdata.com",
+    "CreationDate": "2021-12-21 08:30:30+00:00",
+    "ACL": {
+      "Owner": {
+        "ID": "c550654fa6db6c4d5adaa5f11c3635bc700a09a2826d4d145f75e74c409a631e"
+      },
+      "Grants": [
+        {
+          "Grantee": {
+            "ID": "c550654fa6db6c4d5adaa5f11c3635bc700a09a2826d4d145f75e74c409a631e",
+            "Type": "CanonicalUser"
+          },
+          "Permission": "FULL_CONTROL"
+        }
+      ]
+    },
+    "LoggingEnabled": null,
+    "Accelerate": null,
+    "LocationConstraint": "ap-northeast-2",
+    "PolicyStatus": {
+      "IsPublic": false
+    },
+    "PublicAccessBlockConfiguration": {
+      "BlockPublicAcls": false,
+      "IgnorePublicAcls": false,
+      "BlockPublicPolicy": false,
+      "RestrictPublicBuckets": false
+    },
+    "Policy": {
+      "Version": "2012-10-17",
+      "Id": "Policy1639992731027",
+      "Statement": [
+        {
+          "Sid": "Stmt1639992728030",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity EE2QBHRZAPRGB"
+          },
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::v2pc.tovdata.com/*"
+        }
+      ]
+    },
+    "BucketWebsite": {
+      "IndexDocument": {
+        "Suffix": "index.html"
+      }
+    },
+    "Versioning": {},
+    "OwnershipControls": {
+      "Rules": [
+        {
+          "ObjectOwnership": "ObjectWriter"
+        }
+      ]
+    },
+    "NotificationConfiguration": {},
+    "CORSRules": [
+      {
+        "AllowedHeaders": [
+          "*"
+        ],
+        "AllowedMethods": [
+          "GET",
+          "PUT",
+          "POST",
+          "HEAD"
+        ],
+        "AllowedOrigins": [
+          "*"
+        ],
+        "ExposeHeaders": [
+          "x-amz-server-side-encryption",
+          "x-amz-request-id",
+          "x-amz-id-2"
+        ],
+        "MaxAgeSeconds": 3000
+      }
+    ],
+    "IntelligentTieringConfigurationList": [],
+    "AnalyticsConfigurationList": [],
+    "MetricsConfigurationList": [],
+    "InventoryConfigurationList": []
+  }
+]
