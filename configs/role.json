@@ -1,0 +1,216 @@
+[
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Basic execution permission for lambda",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-execut-lambda"
+    }
+  },
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AmazonDynamoDBReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonDynamoDBReadOnlyAccess"
+      }, {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Permission to read only access for amazon dynamodb from lambda",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-read-dynamodb-from-lambda"
+    }
+  },
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AmazonDynamoDBFullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+      }, {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Permission to read and write access for amazon dynamodb from lambda",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-read-write-dynamodb-from-lambda"
+    }
+  },
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }, {
+        "PolicyName": "AWSLambdaSQSQueueExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Permission to scan target vpc",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-scan-vpc"
+    }
+  },
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AmazonS3ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+      }, {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }, {
+        "PolicyName": "AWSLambdaSQSQueueExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Permission to process queue",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-process-queue"
+    }
+  },
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Permission to handle scan request",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-handle-scan-request"
+    }
+  },
+  {
+    "AttachedPolicies": [
+      {
+        "PolicyName": "AmazonS3ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+      }, {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "Role": {
+      "AssumeRolePolicyDocument": [
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        }
+      ],
+      "Description": "Permission to read s3 from lambda",
+      "MaxSessionDuration": 3600,
+      "Path": "/lambda-role/",
+      "RoleName": "v2pc-inspector-to-read-s3-from-lambda"
+    }
+  }
+]

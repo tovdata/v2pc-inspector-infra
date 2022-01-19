@@ -1,0 +1,54 @@
+[
+  {
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": ["dynamodb:PutItem", "dynamodb:GetItem", "dynamodb:Query", "dynamodb:UpdateItem"],
+          "Resource": "*"
+        }
+      ]
+    },
+    "PolicyName": "v2pc-inspector-to-read-write-dynamodb-items"
+  },
+  {
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": "sts:AssumeRole",
+          "Resource": "*"
+        }
+      ]
+    },
+    "PolicyName": "v2pc-inspector-to-assume-role"
+  },
+  {
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
+          "Resource": "*"
+        }
+      ]
+    },
+    "PolicyName": "v2pc-inspector-to-access-s3-object"
+  },
+  {
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": ["sqs:DeleteMessage", "sqs:ReceiveMessage", "sqs:SendMessage"],
+          "Resource": "*"
+        }
+      ]
+    },
+    "PolicyName": "v2pc-inspector-to-read-write-sqs-message"
+  }
+]
