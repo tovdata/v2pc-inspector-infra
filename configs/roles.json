@@ -1,0 +1,29 @@
+[{
+  "description": "",
+  "managedPolicyArns": [],
+  "name": "v2pc-inspector-to-execute-lambda"
+}, {
+  "description": "to read only access for amazon dynamodb",
+  "managedPolicyArns": ["arn:aws:iam::aws:policy/AmazonDynamoDBReadOnlyAccess"],
+  "name": "v2pc-inspector-to-read-dynamodb-for-lambda"
+}, {
+  "description": "to full access for amaozon dynamodb",
+  "managedPolicyArns": ["arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"],
+  "name": "v2pc-inspector-to-read-write-dynamodb-for-lambda"
+}, {
+  "description": "",
+  "managedPolicyArns": ["arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"],
+  "name": "v2pc-inspector-to-scan-vpc"
+}, {
+  "description": "",
+  "managedPolicyArns": ["arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess", "arn:aws:iam::aws:policy/service-role/AWSLambdaSQSQueueExecutionRole"],
+  "name": "v2pc-inspector-to-process-queue"
+}, {
+  "description": "",
+  "managedPolicyArns": [],
+  "name": "v2pc-inspector-to-handle-scan-request"
+}, {
+  "description": "",
+  "managedPolicyArns": ["arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"],
+  "name": "v2pc-inspector-to-read-s3-for-lambda"
+}]
