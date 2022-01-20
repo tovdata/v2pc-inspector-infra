@@ -22,10 +22,8 @@ export function createManagedPolicies(scope: Construct) {
     }
   } catch (err) {
     // Print error message
-    if (typeof err === "string") {
+    if (typeof err === "string" || err instanceof Error) {
       printMessageForError(err);
-    } else if (err instanceof Error) {
-      printMessageForError(err.message);
     }
     // Exit
     process.exit(1);
@@ -52,10 +50,8 @@ export function createRoles(scope: Construct) {
     }
   } catch (err) {
     // Print error message
-    if (typeof err === "string") {
+    if (typeof err === "string" || err instanceof Error) {
       printMessageForError(err);
-    } else if (err instanceof Error) {
-      printMessageForError(err.message);
     }
     // Exit
     process.exit(1);

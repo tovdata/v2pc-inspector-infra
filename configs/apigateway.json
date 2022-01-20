@@ -1,0 +1,2424 @@
+{
+    "APIKeys": [],
+    "CustomDomainNames": [
+        {
+            "domainName": "api.tovdata.com",
+            "certificateUploadDate": "2021-11-25 15:03:30+09:00",
+            "regionalDomainName": "d-dhcshukve1.execute-api.ap-northeast-2.amazonaws.com",
+            "regionalHostedZoneId": "Z20JF4UZKIW1U8",
+            "regionalCertificateArn": "arn:aws:acm:ap-northeast-2:395824177941:certificate/f6caae29-e41d-4fe9-abcc-7b9d07d2c245",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "domainNameStatus": "AVAILABLE",
+            "securityPolicy": "TLS_1_2",
+            "tags": {
+                "Purpose": "v2pc-api"
+            },
+            "APImappings": [
+                {
+                    "basePath": "",
+                    "restApiId": "oxcqheow23",
+                    "stage": "api"
+                }
+            ]
+        }
+    ],
+    "VPCLinks": [],
+    "ClientCertificates": [],
+    "UsagePlans": [],
+    "RestApis": [
+        {
+            "id": "oxcqheow23",
+            "name": "v2pc-apis",
+            "createdDate": "2021-12-02 12:38:47+09:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "disableExecuteApiEndpoint": false,
+            "tags": {},
+            "Authorizers": [
+                {
+                    "id": "locx36",
+                    "name": "v2pc-auth",
+                    "type": "COGNITO_USER_POOLS",
+                    "providerARNs": [
+                        "arn:aws:cognito-idp:ap-northeast-2:395824177941:userpool/ap-northeast-2_Z4JDuYzpg"
+                    ],
+                    "authType": "cognito_user_pools",
+                    "identitySource": "method.request.header.Authorization"
+                }
+            ],
+            "Stages": [
+                {
+                    "deploymentId": "4w4uj6",
+                    "stageName": "api",
+                    "cacheClusterEnabled": false,
+                    "cacheClusterStatus": "NOT_AVAILABLE",
+                    "methodSettings": {},
+                    "documentationVersion": "0.07",
+                    "tracingEnabled": false,
+                    "createdDate": "2021-12-02 17:45:55+09:00",
+                    "lastUpdatedDate": "2022-01-04 18:33:54+09:00",
+                    "currentDeployment": {
+                        "id": "4w4uj6",
+                        "createdDate": "2022-01-04 18:33:54+09:00",
+                        "apiSummary": {
+                            "/config/role": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/config/scanscope": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/resourcegroup": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/scan": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/list": {
+                                "GET": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "PUT": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/param/products/{service+}": {
+                                "ANY": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/param/regions/{service+}": {
+                                "ANY": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/param/types/{service+}": {
+                                "ANY": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/price/{service+}": {
+                                "ANY": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/scan/all": {
+                                "PUT": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/service/scan/indiv/{service+}": {
+                                "ANY": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/signin": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/signout": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/users/change-password": {
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/users/check-password": {
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/users/{userID}": {
+                                "GET": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                },
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/viewdata/get": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            },
+                            "/viewdata/store": {
+                                "OPTIONS": {
+                                    "authorizationType": "NONE",
+                                    "apiKeyRequired": false
+                                },
+                                "POST": {
+                                    "authorizationType": "COGNITO_USER_POOLS",
+                                    "apiKeyRequired": false
+                                }
+                            }
+                        }
+                    },
+                    "Documents": [
+                        {
+                            "id": "x8b14q",
+                            "location": {
+                                "type": "METHOD",
+                                "path": "/users/change-password",
+                                "method": "POST"
+                            },
+                            "properties": "{\n    \"description\": \"Set to new password\"\n}"
+                        },
+                        {
+                            "id": "hyw6nk",
+                            "location": {
+                                "type": "METHOD",
+                                "path": "/users/check-password",
+                                "method": "POST"
+                            },
+                            "properties": "{\n    \"description\": \"Validation check for the username and password.\"\n}"
+                        },
+                        {
+                            "id": "mkno8s",
+                            "location": {
+                                "type": "REQUEST_BODY",
+                                "path": "/signin",
+                                "method": "POST"
+                            },
+                            "properties": "{\n    \"description\": \"Get tokens with authorization code\"\n}"
+                        },
+                        {
+                            "id": "iey6yl",
+                            "location": {
+                                "type": "REQUEST_BODY",
+                                "path": "/users/change-password",
+                                "method": "POST"
+                            },
+                            "properties": "{\n    \"description\": \"The username and password paired with access token are needed. New password replacing current password is needed as well.\"\n}"
+                        },
+                        {
+                            "id": "8zge2i",
+                            "location": {
+                                "type": "REQUEST_BODY",
+                                "path": "/users/check-password",
+                                "method": "POST"
+                            },
+                            "properties": "{\n    \"description\": \"The username and password paired with access token are needed.\"\n}"
+                        },
+                        {
+                            "id": "uplede",
+                            "location": {
+                                "type": "REQUEST_HEADER",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "name": "Authorization"
+                            },
+                            "properties": "{\n    \"description\": \"Access token\"\n}"
+                        },
+                        {
+                            "id": "ovsfcf",
+                            "location": {
+                                "type": "REQUEST_HEADER",
+                                "path": "/users/check-password",
+                                "method": "POST",
+                                "name": "authorization"
+                            },
+                            "properties": "{\n    \"description\": \"Access Token is needed\"\n}"
+                        },
+                        {
+                            "id": "yr0e9l",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/signin",
+                                "method": "*",
+                                "statusCode": "200"
+                            },
+                            "properties": "{\n    \"description\": \"Successful operation\"\n}"
+                        },
+                        {
+                            "id": "l7nih9",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/signin",
+                                "method": "*",
+                                "statusCode": "404"
+                            },
+                            "properties": "{\n    \"description\": \"Not found or forbidden\"\n}"
+                        },
+                        {
+                            "id": "fcz72x",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "statusCode": "200"
+                            },
+                            "properties": "{\n    \"description\": \"OK\"\n}"
+                        },
+                        {
+                            "id": "q0ob6m",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "statusCode": "400"
+                            },
+                            "properties": "{\n    \"description\": \"Incorrect username or password\"\n}"
+                        },
+                        {
+                            "id": "ahgo35",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "statusCode": "401"
+                            },
+                            "properties": "{\n    \"description\": \"Unauthorized. (Mostly, it is a wrong access token issue.)\"\n}"
+                        },
+                        {
+                            "id": "m9hvsc",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "statusCode": "403"
+                            },
+                            "properties": "{\n    \"description\": \"Access Denied\"\n}"
+                        },
+                        {
+                            "id": "f825gw",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "statusCode": "404"
+                            },
+                            "properties": "{\n    \"description\": \"Not Found\"\n}"
+                        },
+                        {
+                            "id": "r1cjji",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/change-password",
+                                "method": "POST",
+                                "statusCode": "500"
+                            },
+                            "properties": "{\n    \"description\": \"Internal Server Error\"\n}"
+                        },
+                        {
+                            "id": "aojp3c",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/check-password",
+                                "method": "POST",
+                                "statusCode": "400"
+                            },
+                            "properties": "{\n    \"description\": \"Incorrect username or password\"\n}"
+                        },
+                        {
+                            "id": "0twvfu",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/check-password",
+                                "method": "POST",
+                                "statusCode": "401"
+                            },
+                            "properties": "{\n    \"description\": \"Unauthorized. (Mostly, it is a wrong access token issue.)\"\n}"
+                        },
+                        {
+                            "id": "sei52d",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/check-password",
+                                "method": "POST",
+                                "statusCode": "403"
+                            },
+                            "properties": "{\n    \"description\": \"Access Denied\"\n}"
+                        },
+                        {
+                            "id": "mw5xbp",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/check-password",
+                                "method": "POST",
+                                "statusCode": "500"
+                            },
+                            "properties": "{\n    \"description\": \"Internal Server Error\"\n}"
+                        },
+                        {
+                            "id": "4b63w1",
+                            "location": {
+                                "type": "RESPONSE",
+                                "path": "/users/check-password",
+                                "method": "POST",
+                                "statusCode": "502"
+                            },
+                            "properties": "{\n    \"description\": \"Internal Server Error\"\n}"
+                        }
+                    ],
+                    "StoredLocation": "apigateway/restApi-oxcqheow23-api-2022-01-14%2018%3A30%3A24.170085.json"
+                }
+            ],
+            "DeploymentHistory": [
+                {
+                    "id": "0048mb",
+                    "createdDate": "2021-12-20 16:51:30+09:00"
+                },
+                {
+                    "id": "0ldfpj",
+                    "createdDate": "2021-12-08 13:49:23+09:00"
+                },
+                {
+                    "id": "2hmn28",
+                    "createdDate": "2021-12-20 16:35:41+09:00"
+                },
+                {
+                    "id": "30nklq",
+                    "createdDate": "2021-12-16 16:24:31+09:00"
+                },
+                {
+                    "id": "3x6ifz",
+                    "createdDate": "2021-12-06 18:13:42+09:00"
+                },
+                {
+                    "id": "4885dk",
+                    "createdDate": "2021-12-06 16:56:16+09:00"
+                },
+                {
+                    "id": "4w4uj6",
+                    "createdDate": "2022-01-04 18:33:54+09:00"
+                },
+                {
+                    "id": "525jar",
+                    "createdDate": "2021-12-06 11:45:22+09:00"
+                },
+                {
+                    "id": "66kz3d",
+                    "createdDate": "2021-12-08 14:00:46+09:00"
+                },
+                {
+                    "id": "6gevmd",
+                    "createdDate": "2022-01-04 11:17:47+09:00"
+                },
+                {
+                    "id": "8emmp6",
+                    "createdDate": "2021-12-06 18:08:59+09:00"
+                },
+                {
+                    "id": "8ujrg1",
+                    "createdDate": "2021-12-13 16:06:27+09:00"
+                },
+                {
+                    "id": "9lzvi8",
+                    "createdDate": "2021-12-16 16:02:19+09:00"
+                },
+                {
+                    "id": "a3z289",
+                    "createdDate": "2022-01-03 14:49:11+09:00"
+                },
+                {
+                    "id": "c4qy7f",
+                    "createdDate": "2021-12-06 11:28:37+09:00"
+                },
+                {
+                    "id": "cio6o6",
+                    "createdDate": "2021-12-06 11:32:48+09:00"
+                },
+                {
+                    "id": "cu3vrh",
+                    "createdDate": "2021-12-06 11:35:44+09:00"
+                },
+                {
+                    "id": "cvhvx0",
+                    "createdDate": "2021-12-06 16:53:46+09:00"
+                },
+                {
+                    "id": "d7fobj",
+                    "createdDate": "2021-12-13 16:15:50+09:00"
+                },
+                {
+                    "id": "e2kapj",
+                    "createdDate": "2021-12-09 14:38:40+09:00"
+                },
+                {
+                    "id": "ee5r60",
+                    "createdDate": "2021-12-13 11:53:44+09:00"
+                },
+                {
+                    "id": "f600cn",
+                    "createdDate": "2021-12-16 16:00:24+09:00"
+                },
+                {
+                    "id": "gljq5b",
+                    "createdDate": "2021-12-20 17:01:01+09:00"
+                },
+                {
+                    "id": "gtoc64",
+                    "createdDate": "2021-12-08 14:02:11+09:00"
+                },
+                {
+                    "id": "h8342q",
+                    "createdDate": "2021-12-13 16:06:00+09:00"
+                },
+                {
+                    "id": "hynehu",
+                    "createdDate": "2021-12-14 13:48:04+09:00"
+                },
+                {
+                    "id": "hyxo9i",
+                    "createdDate": "2021-12-08 13:46:56+09:00"
+                },
+                {
+                    "id": "i0ucws",
+                    "createdDate": "2021-12-06 16:45:20+09:00"
+                },
+                {
+                    "id": "ipckro",
+                    "createdDate": "2021-12-08 12:08:12+09:00"
+                },
+                {
+                    "id": "j0rdsx",
+                    "createdDate": "2021-12-06 16:54:10+09:00"
+                },
+                {
+                    "id": "jy5fv0",
+                    "createdDate": "2022-01-04 17:15:48+09:00"
+                },
+                {
+                    "id": "k2poub",
+                    "createdDate": "2021-12-06 16:50:08+09:00"
+                },
+                {
+                    "id": "l2wae4",
+                    "createdDate": "2021-12-20 10:50:52+09:00"
+                },
+                {
+                    "id": "lc56dn",
+                    "createdDate": "2021-12-13 16:32:30+09:00"
+                },
+                {
+                    "id": "mel08b",
+                    "createdDate": "2021-12-20 16:53:02+09:00"
+                },
+                {
+                    "id": "mlb8v8",
+                    "createdDate": "2021-12-08 13:42:15+09:00"
+                },
+                {
+                    "id": "oy4d86",
+                    "createdDate": "2021-12-09 17:45:09+09:00"
+                },
+                {
+                    "id": "p88rek",
+                    "createdDate": "2021-12-08 12:00:35+09:00"
+                },
+                {
+                    "id": "prbz27",
+                    "createdDate": "2022-01-03 10:35:37+09:00"
+                },
+                {
+                    "id": "q8b29t",
+                    "createdDate": "2021-12-13 16:11:35+09:00"
+                },
+                {
+                    "id": "s23hbm",
+                    "createdDate": "2022-01-03 11:24:01+09:00"
+                },
+                {
+                    "id": "vvgpb9",
+                    "createdDate": "2021-12-09 14:13:08+09:00"
+                },
+                {
+                    "id": "vx9dzp",
+                    "createdDate": "2021-12-07 17:36:55+09:00"
+                },
+                {
+                    "id": "vzhdyq",
+                    "createdDate": "2022-01-03 14:58:50+09:00"
+                },
+                {
+                    "id": "xodxt3",
+                    "createdDate": "2021-12-02 17:45:55+09:00"
+                },
+                {
+                    "id": "xx3mrw",
+                    "createdDate": "2021-12-09 14:10:19+09:00"
+                },
+                {
+                    "id": "xzxz9v",
+                    "createdDate": "2021-12-13 18:11:04+09:00"
+                },
+                {
+                    "id": "y1w8fi",
+                    "createdDate": "2021-12-16 23:54:47+09:00"
+                },
+                {
+                    "id": "yu16lm",
+                    "description": "api integration stage 0.1",
+                    "createdDate": "2021-12-10 15:45:54+09:00"
+                },
+                {
+                    "id": "zaokpp",
+                    "createdDate": "2021-12-02 15:17:17+09:00"
+                },
+                {
+                    "id": "zr46tw",
+                    "createdDate": "2022-01-03 10:10:47+09:00"
+                }
+            ],
+            "DocumentHistory": [
+                {
+                    "version": "0.01",
+                    "createdDate": "2021-12-23 10:44:16+09:00"
+                },
+                {
+                    "version": "0.02",
+                    "createdDate": "2022-01-03 12:16:32+09:00"
+                },
+                {
+                    "version": "0.03",
+                    "createdDate": "2022-01-03 14:49:35+09:00"
+                },
+                {
+                    "version": "0.04",
+                    "createdDate": "2022-01-03 14:57:11+09:00"
+                },
+                {
+                    "version": "0.05",
+                    "createdDate": "2022-01-03 14:59:00+09:00"
+                },
+                {
+                    "version": "0.06",
+                    "createdDate": "2022-01-04 11:18:00+09:00"
+                },
+                {
+                    "version": "0.07",
+                    "createdDate": "2022-01-04 17:16:00+09:00"
+                },
+                {
+                    "version": "0.1",
+                    "createdDate": "2021-12-22 11:14:21+09:00"
+                },
+                {
+                    "version": "0.1.0",
+                    "createdDate": "2021-12-07 17:33:01+09:00"
+                },
+                {
+                    "version": "0.2.0",
+                    "createdDate": "2021-12-07 17:50:48+09:00"
+                }
+            ],
+            "Models": [
+                {
+                    "id": "3b3h3z",
+                    "name": "passwordchange",
+                    "schema": "{\n  \"$schema\" : \"http://json-schema.org/draft-04/schema#\",\n  \"title\" : \"PasswordCheck\",\n  \"type\" : \"object\",\n  \"properties\" : {\n    \"username\" : { \"type\" : \"string\" },\n    \"previous_password\" : { \"type\" : \"string\" },\n    \"new_password\" : { \"type\" : \"string\" }\n  }\n}",
+                    "contentType": "application/json",
+                    "Template": "#set($inputRoot = $input.path('$'))\n{\n  \"username\" : \"foo\",\n  \"previous_password\" : \"foo\",\n  \"new_password\" : \"foo\"\n}"
+                },
+                {
+                    "id": "6lowei",
+                    "name": "GetTokens",
+                    "schema": "{\n  \"$schema\" : \"http://json-schema.org/draft-04/schema#\",\n  \"title\" : \"GetTokens Schema\",\n  \"type\" : \"object\",\n  \"properties\" : {\n    \"authorization_code\" : { \"type\" : \"string\" }\n  }\n}",
+                    "contentType": "application/json",
+                    "Template": "#set($inputRoot = $input.path('$'))\n{\n  \"authorization_code\" : \"foo\"\n}"
+                },
+                {
+                    "id": "hp377j",
+                    "name": "refreshtoken",
+                    "schema": "{\n  \"$schema\" : \"http://json-schema.org/draft-04/schema#\",\n  \"title\" : \"RefreshToken\",\n  \"type\" : \"object\",\n  \"properties\" : {\n    \"refresh_token\" : { \"type\" : \"string\" }\n  }\n}",
+                    "contentType": "application/json",
+                    "Template": "#set($inputRoot = $input.path('$'))\n{\n  \"refresh_token\" : \"foo\"\n}"
+                },
+                {
+                    "id": "kyih6j",
+                    "name": "Empty",
+                    "description": "This is a default empty schema model",
+                    "schema": "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"title\" : \"Empty Schema\",\n  \"type\" : \"object\"\n}",
+                    "contentType": "application/json",
+                    "Template": "#set($inputRoot = $input.path('$'))\n{ }"
+                },
+                {
+                    "id": "szsmsg",
+                    "name": "passwordcheck",
+                    "schema": "{\n  \"$schema\" : \"http://json-schema.org/draft-04/schema#\",\n  \"title\" : \"PasswordCheck\",\n  \"type\" : \"object\",\n  \"properties\" : {\n    \"username\" : { \"type\" : \"string\" },\n    \"password\" : { \"type\" : \"string\" }\n  }\n}",
+                    "contentType": "application/json",
+                    "Template": "#set($inputRoot = $input.path('$'))\n{\n  \"username\" : \"foo\",\n  \"password\" : \"foo\"\n}"
+                },
+                {
+                    "id": "yx2qad",
+                    "name": "Error",
+                    "description": "This is a default error schema model",
+                    "schema": "{\n  \"$schema\" : \"http://json-schema.org/draft-04/schema#\",\n  \"title\" : \"Error Schema\",\n  \"type\" : \"object\",\n  \"properties\" : {\n    \"message\" : { \"type\" : \"string\" }\n  }\n}",
+                    "contentType": "application/json",
+                    "Template": "#set($inputRoot = $input.path('$'))\n{\n  \"message\" : \"foo\"\n}"
+                }
+            ],
+            "RequestValidators": [
+                {
+                    "id": "kjqfhi",
+                    "name": "\ucffc\ub9ac \ubb38\uc790\uc5f4 \ud30c\ub77c\ubbf8\ud130 \ubc0f \ud5e4\ub354 \uac80\uc0ac",
+                    "validateRequestBody": false,
+                    "validateRequestParameters": true
+                },
+                {
+                    "id": "t2zbrm",
+                    "name": "\ubcf8\ubb38, \ucffc\ub9ac \ubb38\uc790\uc5f4 \ud30c\ub77c\ubbf8\ud130 \ubc0f \ud5e4\ub354 \uac80\uc0ac",
+                    "validateRequestBody": true,
+                    "validateRequestParameters": true
+                },
+                {
+                    "id": "uuuad5",
+                    "name": "\ubcf8\ubb38 \uac80\uc0ac",
+                    "validateRequestBody": true,
+                    "validateRequestParameters": false
+                }
+            ],
+            "GatewayResponses": [
+                {
+                    "responseType": "INTEGRATION_FAILURE",
+                    "statusCode": "504",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "RESOURCE_NOT_FOUND",
+                    "statusCode": "404",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "REQUEST_TOO_LARGE",
+                    "statusCode": "413",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "THROTTLED",
+                    "statusCode": "429",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "UNSUPPORTED_MEDIA_TYPE",
+                    "statusCode": "415",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "AUTHORIZER_CONFIGURATION_ERROR",
+                    "statusCode": "500",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "DEFAULT_5XX",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "DEFAULT_4XX",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "BAD_REQUEST_PARAMETERS",
+                    "statusCode": "400",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "BAD_REQUEST_BODY",
+                    "statusCode": "400",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "WAF_FILTERED",
+                    "statusCode": "403",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "EXPIRED_TOKEN",
+                    "statusCode": "403",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "ACCESS_DENIED",
+                    "statusCode": "403",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "INVALID_API_KEY",
+                    "statusCode": "403",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "UNAUTHORIZED",
+                    "statusCode": "401",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "API_CONFIGURATION_ERROR",
+                    "statusCode": "500",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "QUOTA_EXCEEDED",
+                    "statusCode": "429",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "INTEGRATION_TIMEOUT",
+                    "statusCode": "504",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "MISSING_AUTHENTICATION_TOKEN",
+                    "statusCode": "403",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "INVALID_SIGNATURE",
+                    "statusCode": "403",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                },
+                {
+                    "responseType": "AUTHORIZER_FAILURE",
+                    "statusCode": "500",
+                    "responseParameters": {},
+                    "responseTemplates": {
+                        "application/json": "{\"message\":$context.error.messageString}"
+                    },
+                    "defaultResponse": true
+                }
+            ],
+            "Resources": [
+                {
+                    "id": "0spyg8",
+                    "parentId": "1tqdie",
+                    "pathPart": "types",
+                    "path": "/service/param/types"
+                },
+                {
+                    "id": "0td60khpik",
+                    "path": "/"
+                },
+                {
+                    "id": "1sywbu",
+                    "parentId": "x7iwpm",
+                    "pathPart": "role",
+                    "path": "/config/role",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "1sywbu",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-role-manage:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "1sywbu",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "1tqdie",
+                    "parentId": "zcq66c",
+                    "pathPart": "param",
+                    "path": "/service/param"
+                },
+                {
+                    "id": "1vrjj0",
+                    "parentId": "0td60khpik",
+                    "pathPart": "scan",
+                    "path": "/scan",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "1vrjj0",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-request-scan:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "1vrjj0",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "29d3ps",
+                    "parentId": "0td60khpik",
+                    "pathPart": "signout",
+                    "path": "/signout",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "29d3ps",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestModels": {
+                                "application/json": "refreshtoken"
+                            },
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-api-revoke_token:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "29d3ps",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "5qcoxc",
+                    "parentId": "ubmrir",
+                    "pathPart": "change-password",
+                    "path": "/users/change-password",
+                    "resourceMethods": {
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "requestParameters": {
+                                "method.request.header.Authorization": true
+                            },
+                            "requestModels": {
+                                "application/json": "passwordchange"
+                            },
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                },
+                                "400": {
+                                    "statusCode": "400"
+                                },
+                                "401": {
+                                    "statusCode": "401"
+                                },
+                                "403": {
+                                    "statusCode": "403"
+                                },
+                                "404": {
+                                    "statusCode": "404"
+                                },
+                                "500": {
+                                    "statusCode": "500"
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-api-change_password:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "5qcoxc",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "6yi9gu",
+                    "parentId": "lck9tr",
+                    "pathPart": "{service+}",
+                    "path": "/service/param/regions/{service+}",
+                    "resourceMethods": {
+                        "ANY": {
+                            "httpMethod": "ANY",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {
+                                "method.request.path.service": true
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP_PROXY",
+                                "httpMethod": "GET",
+                                "uri": "http://3.34.136.161:3000/info/regions/{service}",
+                                "connectionType": "INTERNET",
+                                "requestParameters": {
+                                    "integration.request.path.service": "method.request.path.service"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "6yi9gu",
+                                "cacheKeyParameters": [
+                                    "method.request.path.service"
+                                ],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "ck4lql",
+                    "parentId": "vcnexe",
+                    "pathPart": "store",
+                    "path": "/viewdata/store",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "ck4lql",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-store-viewdata-last:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "ck4lql",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "enib85",
+                    "parentId": "ubmrir",
+                    "pathPart": "check-password",
+                    "path": "/users/check-password",
+                    "resourceMethods": {
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "requestParameters": {
+                                "method.request.header.authorization": true
+                            },
+                            "requestModels": {
+                                "application/json": "passwordcheck"
+                            },
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                },
+                                "400": {
+                                    "statusCode": "400"
+                                },
+                                "401": {
+                                    "statusCode": "401"
+                                },
+                                "403": {
+                                    "statusCode": "403"
+                                },
+                                "500": {
+                                    "statusCode": "500"
+                                },
+                                "502": {
+                                    "statusCode": "502"
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-api-check_password:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "enib85",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "h1wlc8",
+                    "parentId": "mnchlk",
+                    "pathPart": "indiv",
+                    "path": "/service/scan/indiv"
+                },
+                {
+                    "id": "k2g4l4",
+                    "parentId": "x7iwpm",
+                    "pathPart": "scanscope",
+                    "path": "/config/scanscope",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "k2g4l4",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-manage-scanscope:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "k2g4l4",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "lck9tr",
+                    "parentId": "1tqdie",
+                    "pathPart": "regions",
+                    "path": "/service/param/regions"
+                },
+                {
+                    "id": "miewrl",
+                    "parentId": "zcq66c",
+                    "pathPart": "list",
+                    "path": "/service/list",
+                    "resourceMethods": {
+                        "GET": {
+                            "httpMethod": "GET",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP",
+                                "httpMethod": "GET",
+                                "uri": "http://3.34.136.161:3000/info/service/list",
+                                "connectionType": "INTERNET",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "miewrl",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "miewrl",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS,PUT'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "PUT": {
+                            "httpMethod": "PUT",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP",
+                                "httpMethod": "PUT",
+                                "uri": "http://3.34.136.161:3000/info/service/list",
+                                "connectionType": "INTERNET",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "miewrl",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "mnchlk",
+                    "parentId": "zcq66c",
+                    "pathPart": "scan",
+                    "path": "/service/scan"
+                },
+                {
+                    "id": "phw7cs",
+                    "parentId": "mnchlk",
+                    "pathPart": "all",
+                    "path": "/service/scan/all",
+                    "resourceMethods": {
+                        "PUT": {
+                            "httpMethod": "PUT",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP",
+                                "httpMethod": "PUT",
+                                "uri": "http://3.34.136.161:3000/scan",
+                                "connectionType": "INTERNET",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "phw7cs",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "pj3ep5",
+                    "parentId": "0spyg8",
+                    "pathPart": "{service+}",
+                    "path": "/service/param/types/{service+}",
+                    "resourceMethods": {
+                        "ANY": {
+                            "httpMethod": "ANY",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestValidatorId": "kjqfhi",
+                            "requestParameters": {
+                                "method.request.path.service": true,
+                                "method.request.querystring.productType": true,
+                                "method.request.querystring.region": true
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP_PROXY",
+                                "httpMethod": "GET",
+                                "uri": "http://3.34.136.161:3000/info/types/{service}",
+                                "connectionType": "INTERNET",
+                                "requestParameters": {
+                                    "integration.request.path.service": "method.request.path.service"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "pj3ep5",
+                                "cacheKeyParameters": [
+                                    "method.request.path.service"
+                                ],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "s2s174",
+                    "parentId": "yccsht",
+                    "pathPart": "{service+}",
+                    "path": "/service/price/{service+}",
+                    "resourceMethods": {
+                        "ANY": {
+                            "httpMethod": "ANY",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestValidatorId": "kjqfhi",
+                            "requestParameters": {
+                                "method.request.path.service": true,
+                                "method.request.querystring.operation": false,
+                                "method.request.querystring.productType": false,
+                                "method.request.querystring.region": true,
+                                "method.request.querystring.serviceType": false
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP_PROXY",
+                                "httpMethod": "GET",
+                                "uri": "http://3.34.136.161:3000/price/{service}",
+                                "connectionType": "INTERNET",
+                                "requestParameters": {
+                                    "integration.request.path.service": "method.request.path.service"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "s2s174",
+                                "cacheKeyParameters": [
+                                    "method.request.path.service"
+                                ],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "s2s174",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "touc2z",
+                    "parentId": "ubmrir",
+                    "pathPart": "{userID}",
+                    "path": "/users/{userID}",
+                    "resourceMethods": {
+                        "GET": {
+                            "httpMethod": "GET",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "requestParameters": {
+                                "method.request.path.userID": true
+                            },
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-api-get_user_info:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "touc2z",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "v2pc-api/data.select",
+                                "openid"
+                            ]
+                        },
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "touc2z",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "requestParameters": {
+                                "method.request.path.userID": true
+                            },
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-api-set_user_info:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "touc2z",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "v2pc-api/data.insert",
+                                "openid",
+                                "aws.cognito.signin.user.admin"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "u2syme",
+                    "parentId": "ujoe2q",
+                    "pathPart": "{service+}",
+                    "path": "/service/param/products/{service+}",
+                    "resourceMethods": {
+                        "ANY": {
+                            "httpMethod": "ANY",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestValidatorId": "kjqfhi",
+                            "requestParameters": {
+                                "method.request.path.service": true,
+                                "method.request.querystring.region": true
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP_PROXY",
+                                "httpMethod": "GET",
+                                "uri": "http://3.34.136.161:3000/info/products/{service}",
+                                "connectionType": "INTERNET",
+                                "requestParameters": {
+                                    "integration.request.path.service": "method.request.path.service"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "u2syme",
+                                "cacheKeyParameters": [
+                                    "method.request.path.service"
+                                ],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "u7pw4e",
+                    "parentId": "0td60khpik",
+                    "pathPart": "signin",
+                    "path": "/signin",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "u7pw4e",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestValidatorId": "t2zbrm",
+                            "requestModels": {
+                                "application/json": "GetTokens"
+                            },
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-api-get_auth_tokens:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "u7pw4e",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "ubmrir",
+                    "parentId": "0td60khpik",
+                    "pathPart": "users",
+                    "path": "/users"
+                },
+                {
+                    "id": "uj8qzt",
+                    "parentId": "0td60khpik",
+                    "pathPart": "resourcegroup",
+                    "path": "/resourcegroup",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "uj8qzt",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-manage-resourcegroup-info:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "uj8qzt",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "ujoe2q",
+                    "parentId": "1tqdie",
+                    "pathPart": "products",
+                    "path": "/service/param/products"
+                },
+                {
+                    "id": "vcnexe",
+                    "parentId": "0td60khpik",
+                    "pathPart": "viewdata",
+                    "path": "/viewdata"
+                },
+                {
+                    "id": "vhy680",
+                    "parentId": "vcnexe",
+                    "pathPart": "get",
+                    "path": "/viewdata/get",
+                    "resourceMethods": {
+                        "OPTIONS": {
+                            "httpMethod": "OPTIONS",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {},
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": false,
+                                        "method.response.header.Access-Control-Allow-Methods": false,
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "MOCK",
+                                "requestTemplates": {
+                                    "application/json": "{\"statusCode\": 200}"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "vhy680",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "POST": {
+                            "httpMethod": "POST",
+                            "authorizationType": "COGNITO_USER_POOLS",
+                            "authorizerId": "locx36",
+                            "apiKeyRequired": false,
+                            "methodResponses": {
+                                "200": {
+                                    "statusCode": "200",
+                                    "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Origin": false
+                                    },
+                                    "responseModels": {
+                                        "application/json": "Empty"
+                                    }
+                                }
+                            },
+                            "methodIntegration": {
+                                "type": "AWS_PROXY",
+                                "httpMethod": "POST",
+                                "uri": "arn:aws:apigateway:ap-northeast-2:lambda:path/2015-03-31/functions/arn:aws:lambda:ap-northeast-2:395824177941:function:v2pc-get-viewdata-last:alpha/invocations",
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "contentHandling": "CONVERT_TO_TEXT",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "vhy680",
+                                "cacheKeyParameters": [],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'"
+                                        },
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            },
+                            "authorizationScopes": [
+                                "openid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "x7iwpm",
+                    "parentId": "0td60khpik",
+                    "pathPart": "config",
+                    "path": "/config"
+                },
+                {
+                    "id": "yccsht",
+                    "parentId": "zcq66c",
+                    "pathPart": "price",
+                    "path": "/service/price"
+                },
+                {
+                    "id": "zcq66c",
+                    "parentId": "0td60khpik",
+                    "pathPart": "service",
+                    "path": "/service"
+                },
+                {
+                    "id": "zv5dsd",
+                    "parentId": "h1wlc8",
+                    "pathPart": "{service+}",
+                    "path": "/service/scan/indiv/{service+}",
+                    "resourceMethods": {
+                        "ANY": {
+                            "httpMethod": "ANY",
+                            "authorizationType": "NONE",
+                            "apiKeyRequired": false,
+                            "requestParameters": {
+                                "method.request.path.service": true
+                            },
+                            "methodIntegration": {
+                                "type": "HTTP_PROXY",
+                                "httpMethod": "PUT",
+                                "uri": "http://3.34.136.161:3000/scan/indiv/{service}",
+                                "connectionType": "INTERNET",
+                                "requestParameters": {
+                                    "integration.request.path.service": "method.request.path.service"
+                                },
+                                "passthroughBehavior": "WHEN_NO_MATCH",
+                                "timeoutInMillis": 29000,
+                                "cacheNamespace": "zv5dsd",
+                                "cacheKeyParameters": [
+                                    "method.request.path.service"
+                                ],
+                                "integrationResponses": {
+                                    "200": {
+                                        "statusCode": "200",
+                                        "responseTemplates": {
+                                            "application/json": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

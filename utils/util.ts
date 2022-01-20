@@ -29,10 +29,9 @@ export function loadJsonFile(filename: string) {
     // Transform to json and return data
     return JSON.parse(data);
   } catch (err) {
-    if (typeof err === "string") {
-      printMessageForError(err)
-    } else if (err instanceof Error) {
-      printMessageForError(err.message);
+    // Print error message
+    if (typeof err === "string" || err instanceof Error) {
+      printMessageForError(err);
     }
     // Exit
     process.exit(1);
