@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 import * as apigateway from "aws-cdk-lib/aws-apigateway";
-import { CfnTag, requiredValidator } from "aws-cdk-lib";
+import { CfnTag } from "aws-cdk-lib";
 // Util
 import { createHashId } from "../utils/util";
 
@@ -16,7 +16,7 @@ export class RestApi {
    */
   constructor(scope: Construct, config: any) {
     this._scope = scope;
-    this._mapping = { authorizer: {}, method: {}, resource: {}, requestValidator: {} };
+    this._mapping = { authorizer: {}, method: {}, model: {}, resource: {}, requestValidator: {} };
     // Extract configuration and set a list of tags
     const tags: CfnTag[] = config.tags !== undefined ? Object.keys(config.tags).map((key: string): CfnTag => { return { key: key, value: config.tags[key] }; }) : [];
     // Create the properties for rest api [Ref. https://docs.aws.amazon.com/ko_kr/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html]
@@ -76,18 +76,36 @@ export class RestApi {
     const resourceId = this._mapping.resource[path];
     for (const methodType of Object.keys(config)) {
       const methodOptions = config[methodType];
+      // Set the request models in method
+      const requestModels: any = {};
+      if (methodOptions.requestModels !== undefined) {
+        Object.entries(methodOptions.requestModels).forEach((elem: any) => requestModels[elem.key]=elem.value);
+      }
       // Set the method responses
-      const methodResponses: apigateway.CfnMethod.MethodResponseProperty[] = methodOptions.methodResponses !== undefined ? Object.keys(methodOptions.methodResponses).map((key: string) => methodOptions.methodResponses[key]) : [];
+      const methodResponses: apigateway.CfnMethod.MethodResponseProperty[] = methodOptions.methodResponses !== undefined ? Object.keys(methodOptions.methodResponses).map((key: string) => {
+        const value: any = methodOptions.methodResponses[key];
+        // Set the request models in method responses
+        const requestModels: any = {};
+        if (value.requestModels !== undefined) {
+          Object.entries(value.requestModels).forEach((elem: any) => requestModels[elem.key]=elem.value);
+        }
+        // Return
+        return {
+          statusCode: value.statusCode,
+          responseParameters: value.responseParameters,
+          responseModels: Object.keys(requestModels).length > 0 ? requestModels : undefined,
+        }
+      }) : [];
       // Set the properties for resource method [Ref. https://docs.aws.amazon.com/ko_kr/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html]
       const props: apigateway.CfnMethodProps = {
         apiKeyRequired: methodOptions.apiKeyRequired,
         httpMethod: methodOptions.httpMethod,
-        methodResponses: methodResponses,
+        methodResponses: methodResponses.length > 0 ? methodResponses : undefined,
         resourceId: resourceId,
         restApiId: this._restApi.ref,
-        requestModels: methodOptions.requestModels !== undefined ? Object.keys(methodOptions.requestModels).length > 0 ? methodOptions.requestModels : undefined : undefined,
+        requestModels: Object.keys(requestModels).length > 0 ? requestModels : undefined,
         requestParameters: methodOptions.requestParameters !== undefined ? Object.keys(methodOptions.requestParameters).length > 0 ? methodOptions.requestParameters : undefined : undefined,
-        requestValidatorId: this._mapping.requestValidator[methodOptions.requestValidatorId]
+        requestValidatorId: methodOptions.requestValidatorId !== undefined ? this._mapping.requestValidator[methodOptions.requestValidatorId] : undefined
       };
       // Create the resource method
       this._mapping.method[`${path}:${methodOptions.httpMethod}`] = new apigateway.CfnMethod(this._scope, createHashId(JSON.stringify(props)), props);
@@ -109,7 +127,8 @@ export class RestApi {
         schema: config.schema !== undefined ? JSON.parse(config.schema) : undefined
       };
       // Create the model
-      new apigateway.CfnModel(this._scope, createHashId(JSON.stringify(props)), props);
+      const model = new apigateway.CfnModel(this._scope, createHashId(JSON.stringify(props)), props);
+      this._mapping.model[config.name] = model.ref;
     }
   }
 
