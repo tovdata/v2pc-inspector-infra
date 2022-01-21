@@ -2,9 +2,15 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { V2PcInspectorInfraStack } from '../lib/v2pc-inspector-infra-stack';
+// Util
+import { loadJsonFile } from "../utils/util";
 
-process.env.ACCOUNT = "";
-process.env.REGION = "";
+// Initialization
+(() => {
+  const envConfig: any = loadJsonFile("env/env");
+  // Set enviroments
+  process.env = envConfig;
+})();
 
 const app = new cdk.App();
 new V2PcInspectorInfraStack(app, 'V2PcInspectorInfraStack', {

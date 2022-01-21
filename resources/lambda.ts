@@ -24,7 +24,7 @@ export class Function {
       architectures: ["x86_64"],
       code: {
         s3Bucket: "v2pc-scanned-data",
-        s3Key: `lambdaCodes/${functionConfig.FunctionArn}.zip`
+        s3Key: `lambdaCodes/${decodeURIComponent(functionConfig.FunctionArn)}.zip`
       },
       description: functionConfig.Description,
       environment: functionConfig.Environment,
