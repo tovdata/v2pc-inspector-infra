@@ -1,6 +1,6 @@
 const RESOURCE: any = {};
 
-export function storeResource(type: string, key: string, value: any) {
+export function storeResource(type: string, key: string, value: any): void {
   if (RESOURCE[type] === undefined) RESOURCE[type] = {};
   // Store the resource
   RESOURCE[type][key] = value;

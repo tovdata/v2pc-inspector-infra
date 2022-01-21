@@ -18,12 +18,13 @@ export class Function {
     this._scope = scope;
     // Extract configuration and set a list of tags
     const functionConfig: any = config.Configuration;
-    const tags: CfnTag[] = config.Tags !== undefined ? Object.keys(config.Tags).map((key: string): CfnTag => { return { key: key, value: config.Tags[key] }; }) : [];
+    const tags: CfnTag[] = config.Tags !== undefined && config.Tags !== null ? Object.keys(config.Tags).map((key: string): CfnTag => { return { key: key, value: config.Tags[key] }; }) : [];
     // Create the properties for lambda function [Ref. https://docs.aws.amazon.com/ko_kr/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html]
     const props: lambda.CfnFunctionProps = {
       architectures: ["x86_64"],
       code: {
-        zipFile: "hi"
+        s3Bucket: "v2pc-scanned-data",
+        s3Key: `lambdaCodes/${functionConfig.FunctionArn}.zip`
       },
       description: functionConfig.Description,
       environment: functionConfig.Environment,
@@ -39,6 +40,7 @@ export class Function {
     };
     // Create the lambda function
     this._function = new lambda.CfnFunction(this._scope, createHashId(JSON.stringify(props)), props);
+
   }
 
   /**

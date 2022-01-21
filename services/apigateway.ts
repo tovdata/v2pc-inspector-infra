@@ -3,7 +3,6 @@ import { Construct } from "constructs";
 import { RestApi } from "../resources/apigateway";
 // Util
 import { printMessageForError } from "../utils/print";
-import { storeResource } from "../utils/session";
 import { loadJsonFile } from "../utils/util";
 
 export function createRestApi(scope: Construct): void {
@@ -55,6 +54,14 @@ export function createRestApi(scope: Construct): void {
             restApi.linkAuthorizerToMethod(elem.path, elem.resourceMethods);
           }
         }
+        // // Create the integration for method
+        // for (const elem of config.Resources) {
+        //   if (elem.resourceMethods !== undefined) {
+        //     for (const [key, value] of Object.entries(elem.resourceMethods)) {
+        //       restApi.integrationForMethod(elem.path, key, value as any);
+        //     }
+        //   }
+        // }
       }
     }
   } catch (err) {

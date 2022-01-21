@@ -3,7 +3,7 @@ import { Construct } from "constructs";
 import { Role, ManagedPolicy } from "../resources/iam";
 // Util
 import { printMessageForError } from "../utils/print";
-import { storeResource } from "../utils/session";
+import { storeResource } from "../utils/store";
 import { loadJsonFile } from "../utils/util";
 
 /**

@@ -22,7 +22,7 @@
       "Description": "Basic execution permission for lambda",
       "MaxSessionDuration": 3600,
       "Path": "/lambda-role/",
-      "RoleName": "v2pc-inspector-to-execut-lambda"
+      "RoleName": "v2pc-inspector-to-execute-lambda"
     }
   },
   {

@@ -1,7 +1,7 @@
 import { Construct } from "constructs";
 import * as iam from "aws-cdk-lib/aws-iam";
 // Util
-import { getResource } from "../utils/session";
+import { getResource } from "../utils/store";
 import { createHashId } from "../utils/util";
 
 export class ManagedPolicy {

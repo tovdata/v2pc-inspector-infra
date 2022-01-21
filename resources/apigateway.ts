@@ -82,7 +82,7 @@ export class RestApi {
         Object.entries(methodOptions.requestModels).forEach((elem: any) => requestModels[elem.key]=elem.value);
       }
       // Set the method responses
-      const methodResponses: apigateway.CfnMethod.MethodResponseProperty[] = methodOptions.methodResponses !== undefined ? Object.keys(methodOptions.methodResponses).map((key: string) => {
+      const methodResponses: apigateway.CfnMethod.MethodResponseProperty[] = methodOptions.methodResponses !== undefined ? Object.keys(methodOptions.methodResponses).map((key: string): apigateway.CfnMethod.MethodResponseProperty => {
         const value: any = methodOptions.methodResponses[key];
         // Set the request models in method responses
         const requestModels: any = {};
@@ -152,7 +152,6 @@ export class RestApi {
         }
       }
     }
-
     // Create the child resources
     this.createResource(this._restApi.attrRootResourceId, "", tree[""]);
   }
@@ -208,15 +207,56 @@ export class RestApi {
   }
 
   /**
+   * Create the integration for method
+   * @param path resource path
+   * @param httpMethod resource method type [ANY|DELETE|GET|OPTIONS|POST|PUT]
+   * @param config integration configuration
+   */
+  public integrationForMethod(path: string, httpMethod: string, config: any): void {
+    // Get an resource method object
+    const method = this._mapping.method[`${path}:${httpMethod}`];
+    // Extract response for integration
+    const integrationResponses: apigateway.CfnMethod.IntegrationResponseProperty[] = config.integrationResponses !== undefined ? Object.entries(config.integrationResponses).map((elem: any): apigateway.CfnMethod.IntegrationResponseProperty => elem.value) : [];
+    // // Set the uri for the integration
+    // let uri: string;
+    // if (config.type !== undefined && config.uri !== undefined) {
+    //   if (config.type.includes("AWS")) {
+    //     // Extract the service type
+    //     const splitUri: string[] = config.uri.split(":");
+    //     const serviceType: string = splitUri[4];
+    //   } else if (config.type.includes("HTTP")) {
+    //   }
+    // }
+    // Set the properties for method integration [Ref. https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html]
+    const props: apigateway.CfnMethod.IntegrationProperty = {
+      cacheKeyParameters: config.cacheKeyParameters !== undefined ? config.cacheKeyParameters.length > 0 ? config.cacheKeyParameters : undefined : undefined,
+      cacheNamespace: method.ref,
+      // connectionId: config.connectionType !== undefined && config.connectionId !== undefined ? config.connectionId : undefined,  // VPC LINK의 ID 필요
+      connectionType: config.connectionType,
+      contentHandling: config.contentHandling,
+      integrationHttpMethod: config.type !== undefined && config.type !== "MOCK" ? config.httpMethod : undefined,
+      integrationResponses: integrationResponses.length > 0 ? integrationResponses : undefined,
+      passthroughBehavior: config.passthroughBehavior,
+      requestParameters: config.requestParameters,
+      requestTemplates: config.requestTemplates,
+      timeoutInMillis: config.timeoutInMillis,
+      type: config.type,
+      uri: config.type !== "MOCK" ? config.uri : undefined
+    };
+    // Set the integration
+    method.addPropertyOverride("Integration", props);
+  }
+
+  /**
    * Link an authorizer to resource method
    * @param path resource path
    * @param config resource method configuration
    */
-  public linkAuthorizerToMethod(path: string, config: any) {
+  public linkAuthorizerToMethod(path: string, config: any): void {
     for (const methodType of Object.keys(config)) {
       // Extract the method options
       const methodOptions = config[methodType];
-      // Get a method resource
+      // Get a resource method object
       const method = this._mapping.method[`${path}:${methodOptions.httpMethod}`];
       // Set an authorizer
       if (methodOptions.authorizationType !== undefined) {
